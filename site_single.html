@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Мій сучасний сайт</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 16px;
+      background-color: #f4f6f8;
+      color: #333;
+      margin: 0;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #1e3a8a;
+      color: white;
+      text-align: center;
+      padding: 40px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    nav {
+      background-color: #334155;
+      overflow: auto;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav li {
+      margin: 0 10px;
+    }
+
+    nav a {
+      display: block;
+      text-align: center;
+      padding: 15px 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border-radius: 6px;
+    }
+
+    nav a:hover {
+      background-color: #475569;
+      transform: scale(1.05);
+    }
+
+    nav a.active {
+      background-color: #2563eb;
+    }
+
+    section {
+      padding: 50px 10%;
+      min-height: 60vh;
+    }
+
+    footer {
+      background-color: #1e293b;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+
+    p {
+      line-height: 1.6em;
+    }
+
+    .Img {
+      width: 220px;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      float: left;
+      margin: 10px 20px 10px 0;
+    }
+
+    .multimedia {
+      overflow: auto;
+    }
+
+    .multimedia-video {
+      display: inline-block;
+      float: left;
+      padding: 5px;
+      width: 33.33%;
+      box-sizing: border-box;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+    }
+
+    form {
+      margin: 20px 0;
+      padding: 20px;
+      background: #e2e8f0;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #94a3b8;
+      border-radius: 5px;
+    }
+
+    input[type="submit"] {
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #1e40af;
+    }
+
+    @media (max-width: 768px) {
+      .multimedia-video {
+        width: 100%;
+        float: none;
+      }
+
+      nav ul {
+        flex-direction: column;
+      }
+
+      nav li {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Ласкаво просимо!</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#home" class="active">Головна</a></li>
+      <li><a href="#about">Про нас</a></li>
+      <li><a href="#gallery">Галерея</a></li>
+      <li><a href="#contact">Контакти</a></li>
+    </ul>
+  </nav>
+
+  <!-- Головна -->
+  <section id="home">
+    <h2>Головна сторінка</h2>
+    <p>Вітаємо на нашому сучасному сайті! Тут ви знайдете цікаву інформацію, фото та відео. Перегляньте нашу галерею або залиште свій коментар у формі нижче.</p>
+  </section>
+
+  <!-- Про нас -->
+  <section id="about">
+    <h2>Про нас</h2>
+    <img src="https://via.placeholder.com/220" alt="Зображення" class="Img">
+    <p>Це інформаційна сторінка нашого сайту. Ми прагнемо створювати зручний і сучасний вебконтент для користувачів, поєднуючи простоту дизайну та функціональність.</p>
+    <div style="clear:both;"></div>
+  </section>
+
+  <!-- Галерея -->
+  <section id="gallery">
+    <h2>Галерея</h2>
+    <div class="multimedia">
+      <div class="multimedia-video"><video controls><source src="video/movie.mp4" type="video/mp4"></video></div>
+      <div class="multimedia-video"><video controls><source src="video/movie.mp4" type="video/mp4"></video></div>
+      <div class="multimedia-video"><video controls><source src="video/movie.mp4" type="video/mp4"></video></div>
+    </div>
+  </section>
+
+  <!-- Контакти -->
+  <section id="contact">
+    <h2>Контакти</h2>
+    <form action="#" method="post" name="login">
+      <input type="text" placeholder="Login" required>
+      <input type="password" placeholder="Password" required>
+      <input type="submit" value="Увійти">
+    </form>
+
+    <form action="#" method="post" name="comment">
+      <p><input type="text" name="author" placeholder="Ім’я" required></p>
+      <p><input type="text" name="email" placeholder="Електронна пошта" required></p>
+      <p><textarea name="comment" cols="48" rows="8" placeholder="Ваш коментар..."></textarea></p>
+      <p><input type="submit" value="Надіслати"></p>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Мій сайт</p>
+  </footer>
+
+  <script>
+    const links = document.querySelectorAll('nav a');
+    window.addEventListener('scroll', () => {
+      let fromTop = window.scrollY + 100;
+      links.forEach(link => {
+        let section = document.querySelector(link.hash);
+        if (
+          section.offsetTop <= fromTop &&
+          section.offsetTop + section.offsetHeight > fromTop
+        ) {
+          links.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
